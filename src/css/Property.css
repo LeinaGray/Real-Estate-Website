@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Image {
+    @apply w-[352px] h-[200px] left-0 top-0 absolute bg-[#130f26] rounded-tl-lg rounded-tr-lg;
+}
+
+.Favorited {
+    @apply w-12 h-12 left-[280px] top-[232px] absolute;
+}
+
+.Favorited .Ellipse {
+    @apply w-12 h-12 left-0 top-0 absolute bg-white rounded-full border border-[#e7e6f9];
+}
+
+.Favorited .Ellipse .Frame {
+    @apply w-6 h-6 px-[3px] pt-[5px] pb-[3.64px] left-[12px] top-[12px] absolute justify-center items-center inline-flex;
+}
+
+.Title {
+    @apply left-[24px] top-[272px] absolute text-[#000828] text-2xl font-bold leading-9;
+}
+
+.Price {
+    @apply text-[#7065f0] text-2xl font-extrabold leading-9 h-9 left-[24px] top-[232px] absolute justify-start items-end gap-0.5 inline-flex;
+}
+
+.Address {
+    @apply w-[284px] left-[24px] top-[316px] absolute opacity-50 text-[#000828] text-base font-normal leading-normal;
+}
+
+.Attributes {
+    @apply h-5 left-[24px] top-[372px] absolute justify-center items-start gap-4 inline-flex;
+}
+
+.Attribute-item {
+    @apply justify-center items-center gap-2 flex;
+}
+
+.Icon {
+    @apply w-5 h-5 px-[1.67px] py-[4.17px] justify-center items-center flex text-violet-700;
+}
+
+.Label {
+    @apply opacity-70 text-[#000828] text-sm font-normal leading-tight;
+}
