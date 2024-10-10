@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import
 
-const RealEstateListingForm = () => {
+const PostPropertyForm = () => {
   const [title, setTitle] = useState('');
   const [propertyType, setPropertyType] = useState('');
   const [price, setPrice] = useState('');
@@ -68,4 +68,4 @@ const RealEstateListingForm = () => {
   );
 };
 
-export default RealEstateListingForm;
+export default PostPropertyForm;

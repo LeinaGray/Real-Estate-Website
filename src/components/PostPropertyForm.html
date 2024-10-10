@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Real Estate Listing Form</title>
+  <title>Real Estate Listing Form</title>
+  <link rel="stylesheet" href="src/css/PostPropertyForm.css">
 </head>
 <body>
 
@@ -34,7 +35,20 @@
     <label for="list_of_amenities">List of Amenities:</label>
     <textarea id="list_of_amenities" name="list_of_amenities"></textarea><br><br>
     <label for="images">Images:</label>
-    <input type="file" id="images" name="images" multiple><br><br>
+    <div class="dropzone">
+      <input type="file">
+      <div class="text-center">
+        <img class="svg" src="https://www.svgrepo.com/show/357902/image-upload.svg" alt="">
+        <label for="file-upload" class="label-file-upload">
+            <span>Drag and drop</span>
+            <span class="text-indigo-600"> or browse</span>
+            <span>to upload</span>
+            <input id="file-upload" name="file-upload" type="file" class="sr-only" multiple>
+            <p>PNG, JPG, GIF up to 10MB</p>
+        </label>
+      </div>
+      <img src="" class="mt-4 mx-auto max-h-40 hidden" id="preview">
+    </div>
     <input type="submit" value="Submit">
   </fieldset>
 </form>

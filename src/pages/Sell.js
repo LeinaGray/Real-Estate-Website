@@ -1,7 +1,7 @@
 import React from "react";
 
 import Banner from "../components/Banner"; 
-import PostListingForm from "../components/PostListingForm";
+import PostListingForm from "../components/PostPropertyForm";
 
 const Home = () => {
     return(
