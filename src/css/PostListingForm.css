@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+fieldset {
+  @apply mx-auto w-full max-w-[550px] bg-white p-12;
+}
+legend {
+  @apply mb-3 block text-base font-medium text-2xl text-[#07074D];
+}
+label {
+  @apply mb-3 block text-base font-medium text-[#07074D];
+}
+span {
+  @apply inline-flex h-14 items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm ;
+}
+#price {
+  @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+input {
+    @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+textarea {
+    @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+select {
+  @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+input[type=submit] {
+  @apply w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none cursor-pointer
+}
