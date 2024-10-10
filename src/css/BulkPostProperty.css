@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+fieldset {
+    @apply mx-auto w-full max-w-[1000px] bg-violet-100 p-12 rounded-md;
+  }
+input[type=submit] {
+    @apply w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none cursor-pointer
+  }
+  

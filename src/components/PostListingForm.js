@@ -87,9 +87,9 @@ const RealEstateListingForm = () => {
         <label htmlFor="address">Address:</label>
         <input type="text" id="address" name="address" value={address} onChange={(e) => setAddress(e.target.value)} /><br /><br />
         <label htmlFor="numBedrooms">Number of Bedrooms:</label>
-        <input type="number" id="numBedrooms" name="numBedrooms" min="1" value={numBedrooms} onChange={(e) => setNumBedrooms(e.target.value)} /><br /><br />
+        <input type="number" id="numBedrooms" name="numBedrooms" min="0" value={numBedrooms} onChange={(e) => setNumBedrooms(e.target.value)} /><br /><br />
         <label htmlFor="numBathrooms">Number of Bathrooms:</label>
-        <input type="number" id="numBathrooms" name="numBathrooms" min="1" alue={numBathrooms} onChange={(e) => setNumBathrooms(e.target.value)} /><br /><br />
+        <input type="number" id="numBathrooms" name="numBathrooms" min="0" alue={numBathrooms} onChange={(e) => setNumBathrooms(e.target.value)} /><br /><br />
         <label htmlFor="floorArea">Floor Area:</label>
         <input type="number" id="floorArea" name="floorArea" value={floorArea} onChange={(e) => setFloorArea(e.target.value)} /><br /><br />
         <label htmlFor="description">Description:</label>
