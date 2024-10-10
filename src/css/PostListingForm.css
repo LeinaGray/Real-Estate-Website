@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+fieldset {
+  @apply mx-auto w-full max-w-[1000px] bg-violet-100 p-12 rounded-md;
+}
+h2{
+  @apply mb-10 pb-3 block text-base text-left font-semibold text-4xl text-[#07074D] border-b-2 border-white;
+}
+
+label {
+  @apply mb-3 block text-base font-medium text-[#07074D];
+}
+span {
+  @apply inline-flex h-14 items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm ;
+}
+#price {
+  @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+input {
+    @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+textarea {
+    @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+select {
+  @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;
+}
+input[type=submit] {
+  @apply w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none cursor-pointer
+}
+
+
+
+.form-container {
+  @apply mx-auto w-full max-w-[1000px] bg-slate-400 p-12 shadow-md rounded-lg;
+}
+.span-container{
+  @apply border-none bg-transparent p-1;
+}
+.svg{
+  @apply mx-auto h-12 w-12;
+}
+.dropzone {
+  @apply flex justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none text-center mb-5 block ;
+}
+
+.label-file-upload {
+  @apply mt-2 block text-base font-medium text-[#07074D] relative cursor-pointer ;
+}
+.label-file-upload p {
+  @apply mt-1 text-xs text-gray-500;
+}
+
+/* dropzone */
+.dropzone-container{
+  @apply w-[1000px] relative border-2 border-gray-300 border-dashed rounded-lg p-6 mb-5;
+}

@@ -15,7 +15,7 @@ const Header = () => {
                     </Link>
                     <Link className="px-4 py-3 bg-violet-300 text-white rounded-lg" to="">Rent</Link>
                     <Link className="px-4 py-3 hover:bg-violet-300 hover:text-white rounded-lg" to="">Buy</Link>
-                    <Link className="px-4 py-3 hover:bg-violet-300 hover:text-white rounded-lg"  to="">Sell</Link>
+                    <Link className="px-4 py-3 hover:bg-violet-300 hover:text-white rounded-lg"  to="/Sell">Sell</Link>
                     <Link className="px-4 py-3 hover:bg-violet-300 hover:text-white rounded-lg"  to="">Manage Property</Link>
                     <Link className="px-4 py-3 hover:bg-violet-300 hover:text-white rounded-lg"  to="">Resources</Link>
                 </div>

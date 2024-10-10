@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import
 
 const PostPropertyForm = () => {
   const [title, setTitle] = useState('');

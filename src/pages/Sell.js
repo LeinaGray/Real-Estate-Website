@@ -1,15 +1,14 @@
 import React from "react";
 
 import Banner from "../components/Banner"; 
-import PostListingForm from "../components/PostPropertyForm";
+import PostListingForm from "../components/PostListingForm";
 
-const Home = () => {
+const Sell = () => {
     return(
         <div className="min-h-[1800px] ">
-            <Banner/> 
-            <PostListing />
+            <PostListingForm />
         </div>
     )
 }
 
-export default Home;
+export default Sell;
