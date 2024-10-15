@@ -1,9 +1,12 @@
+/*src\css\Property.css*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .Image {
     @apply w-[352px] h-[200px] left-0 top-0 absolute bg-[#130f26] rounded-tl-lg rounded-tr-lg;
+    object-fit: cover; /* Crop the image to fit the box */
 }
 
 .Favorited {
@@ -44,4 +47,25 @@
 
 .Label {
     @apply opacity-70 text-[#000828] text-sm font-normal leading-tight;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination button {
+    background-color: #4f46e5; /* Violet */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination button:disabled {
+    background-color: #d1d5db; /* Gray */
+    cursor: not-allowed;
 }

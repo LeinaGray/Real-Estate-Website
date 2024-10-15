@@ -1,141 +1,81 @@
-import React, {useState, useEffect, createContext} from 'react';
+//src\components\HouseContext.js
 
-import {housesData} from "../data";
+import React, { useState, useEffect, createContext } from 'react';
+import Papa from 'papaparse'; // Import PapaParse
 
 export const HouseContext = createContext();
 
-const HouseContextProvider = ({children}) => {
-    const [houses, setHouses] = useState(housesData);
+const HouseContextProvider = ({ children }) => {
+    const [houses, setHouses] = useState([]);
     const [country, setCountry] = useState("Location (any)");
-    const [countries, setCountries] = useState([]);
-    const [property, setProperty] = useState('Property (any)');
-    const [properties, setProperties] = useState([]);
     const [price, setPrice] = useState('Price range (any)');
-    const [startDate, setStartDate] = useState('Rent Date (any)')
-    // const [startDate, setStartDate] = useState('Date (any)')
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [countries, setCountries] = useState([]); // Initialize countries
+    const [properties, setProperties] = useState([]); // Initialize properties
 
-    //countries
     useEffect(() => {
-        const allCountries = houses.map((house) => {
-            return house.country;
-        });
-        // console.log(allCountries);
+        const loadData = async () => {
+            const response = await fetch('/metadata.csv'); 
+            const reader = response.body.getReader();
+            const result = await reader.read();
+            const decoder = new TextDecoder("utf-8");
+            const csvData = decoder.decode(result.value);
 
-        const uniqueCountries = ['Location (any)', ...new Set(allCountries)];
+            Papa.parse(csvData, {
+                header: true,
+                complete: (results) => {
+                    setHouses(results.data);
+                    setLoading(false);
+                    
+                    // Extract unique countries and properties after loading the houses
+                    const uniqueCountries = [...new Set(results.data.map(house => house.location))];
+                    const uniqueProperties = [...new Set(results.data.map(house => house.title))];
+                    
+                    setCountries(uniqueCountries);
+                    setProperties(uniqueProperties);
+                },
+                error: (error) => {
+                    console.error("Error reading CSV:", error);
+                    setLoading(false);
+                },
+            });
+        };
 
-        // console.log(uniqu eCountries);
-
-        setCountries(uniqueCountries);
-
-    }, [houses]);
-
-    //properties
-    useEffect(() => {
-        const allProperties = houses.map((house) => {
-            return house.type;
-        });
-        // console.log(allProperties);
-
-        const uniqueProperties = ['Property (any)', ...new Set(allProperties)];
-
-        // console.log(uniqueProperties);
-
-        setProperties(uniqueProperties);
-
-    },[houses] );
+        loadData();
+    }, []);
 
     const handleClick = () => {
-
-        //loading
         setLoading(true);
-        
-        // console.log('clicked');
-        // console.log(country, property, price, date);
-
-        const  isDefault = (str) => {
-            return str.split(' ').includes('(any)');;
-        };
-        // console.log(isDefault(country));
 
         const minPrice = parseInt(price.split(' ')[0]);
-        // console.log(minPrice);
         const maxPrice = parseInt(price.split(' ')[2]);
 
-        const dateSelected = parseInt(startDate);
-        // console.log(dateSelected);
-    
-        // console.log(maxPrice);
-        // const newHousesm = housesData.filter((house) => {
-        //     console.log(house.price);
-        // })
-        // console.log(dateAvailableTill);
-        const newHouses = housesData.filter((house) => {
-            const housePrice = parseInt(house.price);
-            // console.log(housePrice);
-            const houseAvailableDate = parseInt(house.date);
-            // console.log(`houseDate: ${houseDate}`);
-
-            if(house.country === country && house.type === property && housePrice >= minPrice && housePrice <= maxPrice && houseAvailableDate >= dateSelected) {
-                return house; 
-            }
-
-            //if all values are default
-            if(isDefault(country) && isDefault(property) && isDefault(price) && isDefault(startDate)){
-                return house;
-            }
-
-            //if country is not default
-            if(!isDefault(country) && isDefault(price) && isDefault(price) && isDefault(startDate) ){
-                return house.country === country;
-            }
-
-            //if property is not default
-            if(!isDefault(property) && isDefault(country) && isDefault(price) && isDefault(startDate)){
-                return house.type === property
-            }
-
-            //if price is not default 
-            if(!isDefault(price) && isDefault(country) && isDefault(property) && isDefault(startDate) ){
-                if(house.price >= minPrice && house.price <= maxPrice){
-                    return house;
-                }
-            }
-
-            if(!isDefault(startDate) && isDefault(country) && isDefault(property) && isDefault(price) ){
-                if(houseAvailableDate >= dateSelected){
-                    return house;
-                }
-            }
-
-
+        const newHouses = houses.filter((house) => {
+            const housePrice = parseInt(house.price.replace(/[^\d]/g, '')); // Convert price to integer
+            return housePrice >= minPrice && housePrice <= maxPrice;
         });
 
-        // console.log(newHouses);
         setTimeout(() => {
-            return newHouses.length < 1? setHouses([]): 
-            setHouses(newHouses),
+            setHouses(newHouses.length < 1 ? [] : newHouses);
             setLoading(false);
         }, 1000);
-    }
+    };
 
-    return <HouseContext.Provider value={{
-        country,
-        setCountry,
-        countries,
-        property,
-        setProperty,
-        properties,
-        price,
-        setPrice,
-        startDate, 
-        setStartDate,
-        houses,
-        loading, 
-        handleClick, 
-        
-
-    }}>{children}</HouseContext.Provider>
-}
+    return (
+        <HouseContext.Provider value={{
+            houses,
+            loading,
+            handleClick,
+            country,
+            setCountry,
+            price,
+            setPrice,
+            countries, // Pass countries to the context
+            properties, // Pass properties to the context
+        }}>
+            {children}
+        </HouseContext.Provider>
+    );
+};
 
 export default HouseContextProvider;
