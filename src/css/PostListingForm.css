@@ -12,7 +12,7 @@ label {
   @apply mb-3 block text-base font-medium text-[#07074D];
 }
 span {
-  @apply inline-flex h-14 items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm ;
+  @apply inline-flex h-14 items-center px-3 rounded-l-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm ;
 }
 #price {
   @apply w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md;

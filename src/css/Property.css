@@ -49,6 +49,10 @@
     @apply opacity-70 text-[#000828] text-sm font-normal leading-tight;
 }
 
+span {
+    @apply inline-flex h-14 items-center px-3 rounded-l-md border border-gray-300 bg-gray-50 text-gray-500 sm:text-sm ;
+  }
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -56,7 +60,7 @@
 }
 
 .pagination button {
-    background-color: #4f46e5; /* Violet */
+    background-color: #702cdc; /* Violet */
     color: white;
     padding: 5px 10px;
     border: none;

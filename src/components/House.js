@@ -60,20 +60,26 @@ const House = ({ house }) => {
                 ))}
             </div>
 
-            {/* Pagination Controls */}
-            <div className="pagination">
+            // Pagination Controls
+            <div className="pagination flex justify-center items-center mt-4 space-x-2">
                 <button
                     onClick={() => setCurrentPage(currentPage > 1 ? currentPage - 1 : 1)}
                     disabled={currentPage === 1}
                     aria-label="Previous page"
+                    className="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg"
                 >
                     Previous
                 </button>
-                <span>{` Page ${currentPage} of ${totalPages} `}</span>
+
+                <div className="text-gray-800 px-4"> {/* Wrap text in a div with padding */}
+                    {`Page ${currentPage} of ${totalPages}`}
+                </div>
+
                 <button
                     onClick={() => setCurrentPage(currentPage < totalPages ? currentPage + 1 : totalPages)}
                     disabled={currentPage === totalPages}
                     aria-label="Next page"
+                    className="bg-violet-600 text-white px-4 py-2 rounded-lg"
                 >
                     Next
                 </button>

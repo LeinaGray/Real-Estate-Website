@@ -1,28 +1,20 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for routing
 import { FaCamera } from "react-icons/fa"; // Import camera icon
-import Search from "./Search";
+import Search from "./Search"; // Assuming Search is another component you want to include
 
 const Banner = () => {
     const [searchTerm, setSearchTerm] = useState("");
+    const navigate = useNavigate(); // Hook for navigation
 
     // Handle the input change
     const handleInputChange = (e) => {
         setSearchTerm(e.target.value);
     };
 
-    // Handle the camera button click to upload an image
+    // Redirect to image search page when camera button is clicked
     const handleCameraClick = () => {
-        const input = document.createElement("input");
-        input.type = "file";
-        input.accept = "image/*";
-        input.onchange = (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                console.log("Uploaded file:", file);
-                // Add logic to handle the uploaded file
-            }
-        };
-        input.click();
+        navigate('/image-search'); // Navigate to image search page
     };
 
     return (
@@ -31,7 +23,7 @@ const Banner = () => {
                 <h1 className="text-3xl font-bold text-gray-800 mr-56">
                     Search for Properties
                 </h1>
-                <div className="flex items-center border-2 rounded-lg overflow-hidden w-full max-w-[400px] ml-56"> {/* Container border */}
+                <div className="flex items-center border-2 rounded-lg overflow-hidden w-full max-w-[400px] ml-56">
                     <input
                         type="text"
                         value={searchTerm}
@@ -40,7 +32,7 @@ const Banner = () => {
                         className="flex-grow px-4 py-2 outline-none border-none" // No border for input
                     />
                     <button 
-                        onClick={handleCameraClick} 
+                        onClick={handleCameraClick} // Handle the camera button click
                         className="bg-violet-500 p-2 rounded-lg mr-1" // Added margin-right to camera button
                     >
                         <FaCamera className="text-white" />
@@ -48,7 +40,7 @@ const Banner = () => {
                 </div>
             </div>
 
-            <Search />
+            <Search /> {/* Include the Search component */}
         </section>
     );
 };
