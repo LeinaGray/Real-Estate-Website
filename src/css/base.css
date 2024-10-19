@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'NeueHaasDisplayBlack';
+    src: url('src/css/fonts/NeueHaasDisplayBlack.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayBlackItalic';
+    src: url('src/css/fonts/NeueHaasDisplayBlackItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayBoldItalic';
+    src: url('src/css/fonts/NeueHaasDisplayBoldItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayBold';
+    src: url('src/css/fonts/NeueHaasDisplayBold.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayLight';
+    src: url('src/css/fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayLightItalic';
+    src: url('src/css/fonts/NeueHaasDisplayLightItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayMedium';
+    src: url('src/css/fonts/NeueHaasDisplayMedium.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayMediumItalic';
+    src: url('src/css/fonts/NeueHaasDisplayMediumItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayRoman';
+    src: url('src/css/fonts/NeueHaasDisplayRoman.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayRomanItalic';
+    src: url('src/css/fonts/NeueHaasDisplayRomanItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayThin';
+    src: url('src/css/fonts/NeueHaasDisplayThin.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayThinItalic';
+    src: url('src/css/fonts/NeueHaasDisplayThinItalic.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayXXThin';
+    src: url('src/css/fonts/NeueHaasDisplayXXThin.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NeueHaasDisplayXXThinItalic';
+    src: url('src/css/fonts/NeueHaasDisplayXXThinItalic.ttf') format('truetype');
+  }
