@@ -62,16 +62,12 @@ def search_by_image():
         uploaded_features = extract_features(base_cnn_model, None, image, 'base_cnn')
         dataset_features = load_dataset_features(IMAGE_FOLDER, base_cnn_model, 'base_cnn', CNN_FEATURES_FILE)
     elif model_choice == 'combined':
-        uploaded_features_simclr = extract_features(simclr_model, None, image, 'simclr')
-        dataset_features_simclr = load_dataset_features(IMAGE_FOLDER, simclr_model, 'simclr', SIMCLR_FEATURES_FILE)
-
         uploaded_features_deit = extract_features(deit_model, None, image, 'deit')
         dataset_features_deit = load_dataset_features(IMAGE_FOLDER, deit_model, 'deit', DEIT_FEATURES_FILE)
 
         uploaded_features_clip = extract_features(clip_model, clip_processor, image, 'clip')
         dataset_features_clip = load_dataset_features(IMAGE_FOLDER, clip_model, 'clip', CLIP_FEATURES_FILE)
 
-        most_similar_images_simclr = find_most_similar_image(uploaded_features_simclr, dataset_features_simclr)
         most_similar_images_deit = find_most_similar_image(uploaded_features_deit, dataset_features_deit)
         most_similar_images_clip = find_most_similar_image(uploaded_features_clip, dataset_features_clip)
 
